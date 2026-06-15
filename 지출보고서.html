@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>의약품·의료기기 지출보고서 안내 2026</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --blue:#185FA5;--blue-l:#E6F1FB;--blue-m:#378ADD;--blue-d:#0C447C;
+  --teal:#0F6E56;--teal-l:#E1F5EE;--teal-m:#1D9E75;
+  --green:#3B6D11;--green-l:#EAF3DE;
+  --amber:#854F0B;--amber-l:#FAEEDA;--amber-m:#BA7517;
+  --coral:#993C1D;--coral-l:#FAECE7;--coral-m:#D85A30;
+  --purple:#534AB7;--purple-l:#EEEDFE;
+  --gray:#5F5E5A;--gray-l:#F1EFE8;--gray-d:#2C2C2A;
+  --red:#A32D2D;--red-l:#FCEBEB;
+  --text:#1a1a1a;--muted:#5F5E5A;--border:rgba(0,0,0,.09);
+  --bg:#f8f7f4;--white:#fff;
+  --r-md:10px;--r-lg:14px;--r-xl:18px;
+}
+
+body{font-family:'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;}
+img{max-width:100%;}
+
+/* ── Hero ── */
+.hero{background:linear-gradient(135deg,#0C447C 0%,#185FA5 45%,#1D9E75 100%);color:#fff;padding:60px 20px 80px;text-align:center;position:relative;overflow:hidden;}
+.hero::before,.hero::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.05);}
+.hero::before{width:280px;height:280px;top:-60px;right:-60px;}
+.hero::after{width:220px;height:220px;bottom:-70px;left:-40px;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 16px;font-size:12px;margin-bottom:20px;position:relative;z-index:1;}
+.hero h1{font-size:clamp(22px,5vw,40px);font-weight:800;line-height:1.25;margin-bottom:14px;position:relative;z-index:1;}
+.hero p{font-size:14px;opacity:.88;max-width:520px;margin:0 auto 28px;position:relative;z-index:1;}
+.hero-stats{display:flex;justify-content:center;gap:clamp(16px,4vw,40px);flex-wrap:wrap;position:relative;z-index:1;}
+.hero-stat strong{display:block;font-size:clamp(20px,4vw,28px);font-weight:800;line-height:1;}
+.hero-stat span{font-size:11px;opacity:.75;margin-top:3px;display:block;}
+.hero-div{width:1px;height:36px;background:rgba(255,255,255,.25);align-self:center;}
+
+/* ── Sticky Nav ── */
+.snav{position:sticky;top:0;z-index:100;background:rgba(248,247,244,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);}
+.snav-inner{max-width:980px;margin:0 auto;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding:0 16px;}
+.snav-inner::-webkit-scrollbar{display:none;}
+.nl{display:inline-block;padding:12px 14px;font-size:12.5px;font-weight:600;color:var(--muted);text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:all .15s;}
+.nl:hover{color:var(--blue);border-bottom-color:var(--blue);}
+
+/* ── Layout ── */
+.wrap{max-width:980px;margin:0 auto;padding:0 16px;}
+.sec{padding:52px 0;}
+.sec-lbl{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue);background:var(--blue-l);padding:3px 12px;border-radius:999px;margin-bottom:10px;}
+.sec-title{font-size:clamp(18px,3vw,22px);font-weight:800;margin-bottom:6px;}
+.sec-sub{font-size:13px;color:var(--muted);margin-bottom:28px;}
+.divider{height:1px;background:var(--border);}
+
+/* ── Alerts ── */
+.alert{border-radius:var(--r-lg);padding:16px 18px;display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;}
+.alert-ico{font-size:18px;flex-shrink:0;margin-top:1px;}
+.a-red{background:var(--red-l);border-left:3px solid var(--red);}
+.a-amber{background:var(--amber-l);border-left:3px solid var(--amber-m);}
+.a-blue{background:var(--blue-l);border-left:3px solid var(--blue-m);}
+.a-teal{background:var(--teal-l);border-left:3px solid var(--teal-m);}
+.alert strong{font-weight:700;font-size:14px;}
+.alert p{font-size:13px;color:var(--muted);margin-top:3px;}
+
+/* ── Quick Links (맨 앞) ── */
+.qlink-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:28px;}
+.qlink{background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);padding:16px 14px;display:flex;flex-direction:column;align-items:center;gap:8px;text-decoration:none;color:inherit;transition:all .15s;text-align:center;}
+.qlink:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.09);border-color:var(--blue-m);}
+.qlink-ico{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.qlink-title{font-size:13px;font-weight:700;line-height:1.3;}
+.qlink-desc{font-size:11px;color:var(--muted);}
+.vid-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;}
+.vlink{background:var(--white);border-radius:var(--r-md);border:1px solid var(--border);padding:14px 16px;display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;transition:all .15s;}
+.vlink:hover{border-color:var(--blue-m);box-shadow:0 4px 16px rgba(0,0,0,.07);}
+.vlink-ico{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.vlink-title{font-size:12.5px;font-weight:700;margin-bottom:2px;line-height:1.3;}
+.vlink-desc{font-size:11px;color:var(--muted);}
+.vlink-arr{margin-left:auto;font-size:13px;color:var(--muted);flex-shrink:0;}
+
+/* ── Cards ── */
+.card-g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:16px;}
+.card-g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;}
+.card{background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);padding:20px;}
+.card-ico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px;}
+.card-title{font-size:14px;font-weight:700;margin-bottom:6px;}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* ── Subject ── */
+.subj-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.subj-g{grid-template-columns:1fr;}}
+.subj-card{background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);overflow:hidden;}
+.subj-head{padding:14px 18px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:8px;}
+.sh-blue{background:var(--blue-l);color:var(--blue-d);}
+.sh-teal{background:var(--teal-l);color:var(--teal);}
+.subj-body{padding:14px 18px;}
+.subj-body li{font-size:13px;color:var(--muted);margin-bottom:6px;padding-left:14px;position:relative;list-style:none;}
+.subj-body li::before{content:'·';position:absolute;left:0;color:var(--blue);font-weight:700;}
+
+/* ── Change Items ── */
+.change{background:var(--white);border-radius:var(--r-md);border:1px solid var(--border);padding:16px 18px;display:flex;gap:12px;align-items:flex-start;margin-bottom:10px;}
+.cbadge{font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:999px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.cb-upd{background:var(--amber-l);color:var(--amber);}
+.cb-new{background:var(--blue-l);color:var(--blue-d);}
+.c-title{font-size:14px;font-weight:700;margin-bottom:4px;}
+.c-desc{font-size:13px;color:var(--muted);line-height:1.6;}
+
+/* ── Timeline ── */
+.tl{position:relative;padding-left:28px;}
+.tl::before{content:'';position:absolute;left:9px;top:10px;bottom:10px;width:2px;background:var(--border);}
+.tl-item{position:relative;margin-bottom:14px;padding:16px 18px;background:var(--white);border-radius:var(--r-md);border:1px solid var(--border);}
+.tl-item::before{content:'';position:absolute;left:-22px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--blue);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--blue);}
+.tl-item.done::before{background:var(--teal-m);box-shadow:0 0 0 2px var(--teal-m);}
+.tl-mon{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.5px;margin-bottom:4px;}
+.tl-item.done .tl-mon{color:var(--teal);}
+.tl-title{font-size:14px;font-weight:700;margin-bottom:4px;}
+.tl-desc{font-size:12.5px;color:var(--muted);line-height:1.55;}
+
+/* ── Benefit Cards ── */
+.ben-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;}
+.ben{background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);padding:18px;display:flex;flex-direction:column;gap:8px;}
+.ben-num{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;flex-shrink:0;}
+.ben-title{font-size:14px;font-weight:700;}
+.ben-desc{font-size:12.5px;color:var(--muted);line-height:1.6;flex:1;}
+.ben-lim{font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:999px;align-self:flex-start;}
+.b1 .ben-num,.b1 .ben-lim{background:var(--blue-l);color:var(--blue-d);}
+.b2 .ben-num,.b2 .ben-lim{background:var(--teal-l);color:var(--teal);}
+.b3 .ben-num,.b3 .ben-lim{background:var(--purple-l);color:var(--purple);}
+.b4 .ben-num,.b4 .ben-lim{background:var(--amber-l);color:var(--amber);}
+.b5 .ben-num,.b5 .ben-lim{background:var(--coral-l);color:var(--coral);}
+.b6 .ben-num,.b6 .ben-lim{background:var(--green-l);color:var(--green);}
+
+/* ── Step Guide ── */
+.step-box{background:var(--white);border-radius:var(--r-xl);border:1px solid var(--border);padding:6px 20px 12px;}
+.step{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--border);}
+.step:last-child{border-bottom:none;}
+.step-num{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
+.step-title{font-size:15px;font-weight:700;margin-bottom:5px;}
+.step-desc{font-size:13px;color:var(--muted);line-height:1.65;}
+.step-note{font-size:12px;background:var(--gray-l);border-radius:8px;padding:10px 14px;margin-top:8px;color:var(--gray);line-height:1.5;}
+
+/* ── Cert Steps (공동인증서) ── */
+.cert-flow{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;margin-bottom:20px;}
+.cert-flow::-webkit-scrollbar{display:none;}
+.cf-item{background:var(--white);border-radius:var(--r-md);border:1.5px solid var(--border);padding:14px 12px;min-width:100px;text-align:center;flex-shrink:0;position:relative;}
+.cf-item.active{border-color:var(--blue);background:var(--blue-l);}
+.cf-num{font-size:20px;font-weight:800;color:var(--blue-m);line-height:1;margin-bottom:6px;}
+.cf-item.active .cf-num{color:var(--blue-d);}
+.cf-label{font-size:11.5px;font-weight:700;line-height:1.3;color:var(--text);}
+.cf-sub{font-size:10px;color:var(--muted);margin-top:4px;}
+.cf-arr{align-self:center;font-size:16px;color:var(--border);flex-shrink:0;}
+
+/* ── Compare Table ── */
+.cmp-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;}
+@media(max-width:480px){.cmp-g{grid-template-columns:1fr;}}
+.cmp-card{background:var(--white);border-radius:var(--r-lg);border:1px solid var(--border);overflow:hidden;}
+.cmp-head{padding:12px 16px;font-size:14px;font-weight:700;display:flex;align-items:center;gap:8px;}
+.cmp-head.blue{background:var(--blue-l);color:var(--blue-d);}
+.cmp-head.dark{background:#0C447C;color:#fff;}
+.cmp-body{padding:14px 16px;}
+.cmp-body li{font-size:13px;color:var(--muted);padding:5px 0 5px 14px;position:relative;list-style:none;border-bottom:1px solid var(--border);}
+.cmp-body li:last-child{border-bottom:none;}
+.cmp-body li::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:var(--blue);}
+.cmp-body li.dark::before{background:#0C447C;}
+
+/* ── Penalty ── */
+.pen-g{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:480px){.pen-g{grid-template-columns:1fr;}}
+.pen{background:var(--red-l);border-radius:var(--r-lg);border:1px solid #F7C1C1;padding:22px;text-align:center;}
+.pen h3{font-size:14px;font-weight:800;color:var(--red);margin-bottom:6px;}
+.pen p{font-size:12px;color:#791F1F;margin-bottom:12px;}
+.pen-num{font-size:28px;font-weight:900;color:var(--red);line-height:1.1;}
+.pen-unit{font-size:12px;color:var(--red);}
+
+/* ── FAQ ── */
+.faq{background:var(--white);border-radius:var(--r-md);border:1px solid var(--border);margin-bottom:8px;overflow:hidden;}
+.faq summary{padding:16px 18px;font-size:13.5px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;list-style:none;user-select:none;}
+.faq summary::-webkit-details-marker{display:none;}
+details[open] .faq summary{color:var(--blue);border-bottom:1px solid var(--border);}
+.faq-arr{font-size:14px;color:var(--muted);transition:transform .2s;flex-shrink:0;}
+details[open] .faq-arr{transform:rotate(180deg);}
+.faq-ans{padding:14px 18px;font-size:13px;color:var(--muted);line-height:1.7;background:#fafaf9;}
+
+/* ── Customer Center ── */
+.cc-box{background:linear-gradient(135deg,#0C447C,#185FA5);border-radius:var(--r-xl);padding:36px 20px;color:#fff;text-align:center;}
+.cc-box h3{font-size:18px;font-weight:800;margin-bottom:8px;}
+.cc-box p{opacity:.85;font-size:13px;margin-bottom:22px;}
+.cc-phones{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.cc-phone{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:10px 22px;font-size:14px;font-weight:700;}
+.cc-hours{font-size:12px;opacity:.7;margin-top:12px;}
+
+/* ── Footer ── */
+footer{text-align:center;padding:36px 20px;font-size:12px;color:var(--muted);border-top:1px solid var(--border);background:var(--white);}
+
+/* ── Pills ── */
+.pill{display:inline-flex;align-items:center;font-size:11.5px;font-weight:600;padding:3px 10px;border-radius:999px;margin:2px;}
+.p-blue{background:var(--blue-l);color:var(--blue-d);}
+.p-teal{background:var(--teal-l);color:var(--teal);}
+.p-amber{background:var(--amber-l);color:var(--amber);}
+.p-red{background:var(--red-l);color:var(--red);}
+
+/* ── Process flow for submit ── */
+.proc-flow{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0;}
+.proc-item{background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);padding:10px 14px;display:flex;align-items:center;gap:8px;min-width:0;flex:1 1 auto;}
+.proc-n{width:26px;height:26px;background:var(--blue);color:#fff;border-radius:50%;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.proc-t{font-size:12.5px;font-weight:700;line-height:1.3;}
+.proc-s{font-size:11px;color:var(--muted);}
+.proc-arr{color:var(--border);font-size:16px;align-self:center;flex-shrink:0;}
+
+/* ── Mini Schedule ── */
+.mini-sched{display:flex;gap:8px;margin-top:14px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px;}
+.mini-sched::-webkit-scrollbar{display:none;}
+.ms-item{flex:1 1 90px;min-width:90px;background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);padding:12px 8px;text-align:center;}
+.ms-date{font-size:11.5px;font-weight:800;color:var(--blue);margin-bottom:3px;}
+.ms-label{font-size:12.5px;font-weight:800;margin-bottom:3px;}
+.ms-sub{font-size:10px;color:var(--muted);line-height:1.4;}
+.ms-fix .ms-date{color:var(--amber);}
+.ms-ana .ms-date{color:var(--teal);}
+
+/* ── Modal ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;backdrop-filter:blur(3px);display:none;}
+.modal-box{position:fixed;z-index:201;top:50%;left:50%;transform:translate(-50%,-50%);width:min(700px,94vw);max-height:88vh;background:var(--white);border-radius:var(--r-xl);overflow:hidden;display:none;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+.modal-hd{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--border);flex-shrink:0;}
+.modal-hd h3{font-size:16px;font-weight:800;}
+.modal-close{width:32px;height:32px;border-radius:50%;background:var(--gray-l);border:none;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;color:var(--gray-d);}
+.modal-close:hover{background:#e0e0e0;}
+.modal-bd{overflow-y:auto;padding:22px;-webkit-overflow-scrolling:touch;}
+.show-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;background:var(--blue);color:#fff;border:none;border-radius:var(--r-md);padding:11px 20px;font-size:13px;font-weight:700;cursor:pointer;transition:background .15s;}
+.show-btn:hover{background:var(--blue-d);}
+.sec-preview{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.6;}
+
+/* ── Responsive ── */
+@media(max-width:640px){
+  .hero{padding:44px 16px 60px;}
+  .hero-div{display:none;}
+  .hero-stats{gap:20px;}
+  .sec{padding:40px 0;}
+  .wrap{padding:0 14px;}
+  .card-g2,.card-g3{grid-template-columns:1fr;}
+  .ben-g{grid-template-columns:1fr;}
+  .qlink-grid{grid-template-columns:repeat(2,1fr);}
+  .vid-grid{grid-template-columns:1fr;}
+  .proc-item{flex:1 1 calc(50% - 8px);}
+}
+@media(max-width:380px){
+  .qlink-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">🏥 보건복지부 · 건강보험심사평가원</div>
+  <h1>의약품·의료기기<br>지출보고서 안내 2026</h1>
+  <p>의약품·의료기기 거래 투명성 강화를 위한<br>경제적 이익 제공 내역 공개 제도 완전 가이드</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><strong>2018</strong><span>제도 도입 연도</span></div>
+    <div class="hero-div"></div>
+    <div class="hero-stat"><strong>5년</strong><span>자료 보관 의무</span></div>
+    <div class="hero-div"></div>
+    <div class="hero-stat"><strong>6가지</strong><span>허용 이익 유형</span></div>
+    <div class="hero-div"></div>
+    <div class="hero-stat"><strong>1천만원</strong><span>미제출 시 벌금</span></div>
+  </div>
+</section>
+
+<!-- STICKY NAV -->
+<nav class="snav">
+  <div class="snav-inner">
+    <a href="#links" class="nl">🔗 바로가기</a>
+    <a href="#overview" class="nl">📋 제도 개요</a>
+    <a href="#changes" class="nl">🆕 변경사항</a>
+    <a href="#schedule" class="nl">📅 제출 일정</a>
+    <a href="#subjects" class="nl">👥 제출 대상</a>
+    <a href="#types" class="nl">💊 허용 유형</a>
+    <a href="#cert" class="nl">🔐 인증서 발급</a>
+    <a href="#howto" class="nl">📝 작성 방법</a>
+    <a href="#faq" class="nl">❓ FAQ</a>
+  </div>
+</nav>
+
+<!-- 중요 알림 -->
+<div class="wrap" style="padding-top:28px;">
+  <div class="alert a-red">
+    <div class="alert-ico">🚨</div>
+    <div>
+      <strong>경제적 이익을 제공하지 않아도 제출은 반드시 의무입니다</strong>
+      <p>이익 제공 내역이 없어도 <strong>무실적 제출</strong> 필수. 미제출 시 1년 이하 징역 또는 1천만원 이하 벌금. 처리 완료 후 카카오톡/SMS 안내가 발송됩니다.</p>
+    </div>
+  </div>
+  <div class="alert a-amber">
+    <div class="alert-ico">🔐</div>
+    <div>
+      <strong>인증서 주의 — 건강보험공단 발급 또는 전자세금계산서용 공동인증서만 사용 가능</strong>
+      <p>일반 은행용 금융 인증서(개인·범용)는 사용 불가. 신규는 <strong>signgate.com</strong>에서 보건복지전용(무료) 발급.</p>
+    </div>
+  </div>
+  <div class="mini-sched">
+    <div class="ms-item">
+      <div class="ms-date">6/1~6/20</div>
+      <div class="ms-label">1차 제출</div>
+      <div class="ms-sub">도매·CSO<br>판매(임대)·CSO</div>
+    </div>
+    <div class="ms-item">
+      <div class="ms-date">7/1~7/20</div>
+      <div class="ms-label">2차 제출</div>
+      <div class="ms-sub">품목허가·수입자<br>제조·수입·CSO</div>
+    </div>
+    <div class="ms-item ms-fix">
+      <div class="ms-date">7/21~31</div>
+      <div class="ms-label">수정 보완</div>
+      <div class="ms-sub">오류 수정<br>가능 기간</div>
+    </div>
+    <div class="ms-item ms-ana">
+      <div class="ms-date">8~11월</div>
+      <div class="ms-label">자료 분석</div>
+      <div class="ms-sub">심평원<br>분석</div>
+    </div>
+    <div class="ms-item">
+      <div class="ms-date">12월</div>
+      <div class="ms-label">결과 공표</div>
+      <div class="ms-sub">보건복지부<br>홈페이지</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider" style="margin-top:28px;"></div>
+
+<!-- ══ 바로가기 & 참고자료 ══ -->
+<section class="sec wrap" id="links">
+  <div class="sec-lbl">🔗 바로가기 & 참고자료</div>
+  <h2 class="sec-title">빠른 바로가기</h2>
+  <p class="sec-sub">자주 사용하는 시스템과 참고자료 바로가기</p>
+
+  <div class="qlink-grid">
+    <a href="https://www.hira.or.kr/kops/" class="qlink" target="_blank" rel="noopener">
+      <div class="qlink-ico" style="background:var(--blue-l);">🏥</div>
+      <div class="qlink-title">지출보고서<br>관리시스템 (KOPS)</div>
+      <div class="qlink-desc">제출·조회·수정</div>
+    </a>
+    <a href="https://www.hira.or.kr/main.do" class="qlink" target="_blank" rel="noopener">
+      <div class="qlink-ico" style="background:var(--teal-l);">🌐</div>
+      <div class="qlink-title">건강보험<br>심사평가원</div>
+      <div class="qlink-desc">HIRA 공식 홈페이지</div>
+    </a>
+    <a href="https://nedrug.mfds.go.kr/index" class="qlink" target="_blank" rel="noopener">
+      <div class="qlink-ico" style="background:var(--green-l);">💊</div>
+      <div class="qlink-title">의약품<br>안전나라</div>
+      <div class="qlink-desc">제품코드 확인</div>
+    </a>
+    <a href="https://www.signgate.com" class="qlink" target="_blank" rel="noopener">
+      <div class="qlink-ico" style="background:var(--amber-l);">🔑</div>
+      <div class="qlink-title">한국정보인증<br>(signgate.com)</div>
+      <div class="qlink-desc">공동인증서 발급</div>
+    </a>
+  </div>
+
+  <h3 style="font-size:15px;font-weight:700;margin:24px 0 12px;">📹 교육 동영상</h3>
+  <div class="vid-grid">
+    <a href="https://www.youtube.com/watch?v=t0hhmG4mFkw" class="vlink" target="_blank" rel="noopener">
+      <div class="vlink-ico" style="background:#FFE8E8;">▶</div>
+      <div>
+        <div class="vlink-title">지출보고서 제도 및 수수내역 조회</div>
+        <div class="vlink-desc">제도 안내 YouTube</div>
+      </div>
+      <span class="vlink-arr">↗</span>
+    </a>
+    <a href="https://www.youtube.com/watch?v=iyP2nShNXIU" class="vlink" target="_blank" rel="noopener">
+      <div class="vlink-ico" style="background:#FFE8E8;">▶</div>
+      <div>
+        <div class="vlink-title">의약품 지출보고서 제도 안내</div>
+        <div class="vlink-desc">실태조사 및 공개 안내</div>
+      </div>
+      <span class="vlink-arr">↗</span>
+    </a>
+    <a href="https://www.youtube.com/watch?v=604lTv7o-70" class="vlink" target="_blank" rel="noopener">
+      <div class="vlink-ico" style="background:var(--teal-l);">▶</div>
+      <div>
+        <div class="vlink-title">의료기기 지출보고서 제도 안내</div>
+        <div class="vlink-desc">실태조사 및 공개 안내</div>
+      </div>
+      <span class="vlink-arr">↗</span>
+    </a>
+    <a href="https://www.youtube.com/playlist?list=PLMwXsFaNxSU8e4P1GvXm_zOo4IT9OpvVk" class="vlink" target="_blank" rel="noopener">
+      <div class="vlink-ico" style="background:#FFE8E8;">▶</div>
+      <div>
+        <div class="vlink-title">의약품 행위유형별 작성방법</div>
+        <div class="vlink-desc">플레이리스트</div>
+      </div>
+      <span class="vlink-arr">↗</span>
+    </a>
+    <a href="https://www.youtube.com/playlist?list=PLMwXsFaNxSU9Sz0-ll-IXThYtCKh0Gkpk" class="vlink" target="_blank" rel="noopener">
+      <div class="vlink-ico" style="background:var(--teal-l);">▶</div>
+      <div>
+        <div class="vlink-title">의료기기 행위유형별 작성방법</div>
+        <div class="vlink-desc">플레이리스트</div>
+      </div>
+      <span class="vlink-arr">↗</span>
+    </a>
+  </div>
+
+  <div id="overview" style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border);">
+    <h3 style="font-size:15px;font-weight:700;margin:0 0 4px;">📋 제도 개요</h3>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:10px;">2018년 도입된 의약품·의료기기 거래 투명성 강화 제도</p>
+    <button class="show-btn" style="margin-top:4px;margin-bottom:18px;" onclick="openModal('tpl-overview')">📋 제도 개요 전체 보기 →</button>
+    <div class="alert a-blue">
+      <div class="alert-ico">ℹ️</div>
+      <div>
+        <strong>폐업 업체 안내</strong>
+        <p>폐업 완료 업체는 공개 의무 소멸 — <strong>지출보고서 신고 불필요</strong>. 단, 수정보완 기간(21~31일) 이전 폐업 완료 확인 필요. 폐업 시 <strong>판촉영업 신고증은 반납</strong> 해야 합니다. 휴업 업체는 폐업이 아니므로 제출 의무 유지.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ 2026년 변경사항 ══ -->
+<section class="sec wrap" id="changes">
+  <div class="sec-lbl">🆕 2026년 변경사항</div>
+  <h2 class="sec-title">주요 개정 내용</h2>
+  <p class="sec-sub">2025년 1월 1일부터 적용되는 서식 개정</p>
+  <div class="change">
+    <span class="cbadge cb-upd">개정</span>
+    <div>
+      <div class="c-title">시판 후 조사 — ⑧구분 항목 추가</div>
+      <div class="c-desc">유형에 따른 번호 기재 필수: <span class="pill p-blue">1. 일반 사례보고서</span> <span class="pill p-teal">2. 희귀질환·장기 추적조사 등 추가 작업 필요</span></div>
+    </div>
+  </div>
+  <div class="change">
+    <span class="cbadge cb-upd">개정</span>
+    <div>
+      <div class="c-title">대금결제 조건에 따른 비용할인 — ⑦계속적 거래 여부 추가</div>
+      <div class="c-desc">1개월 이내 결제하여 1.8% 이하 할인 시 <strong>"Y"</strong> 기재 필수</div>
+    </div>
+  </div>
+  <div class="change">
+    <span class="cbadge cb-new">안내</span>
+    <div>
+      <div class="c-title">기념품비·식음료비 1만원 이하 작성 생략 가능</div>
+      <div class="c-desc">지출보고서 작성 시 1만원 이하 기념품비·식음료비 건은 생략 가능합니다.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ 제출 일정 ══ -->
+<section class="sec wrap" id="schedule">
+  <div class="sec-lbl">📅 제출 일정</div>
+  <h2 class="sec-title">2026년 실태조사 일정</h2>
+  <p class="sec-sub">조사 대상 기간: 2025년 1월 ~ 12월</p>
+  <div class="tl">
+    <div class="tl-item done">
+      <div class="tl-mon">5월</div>
+      <div class="tl-title">사전 교육</div>
+      <div class="tl-desc">건강보험심사평가원 주관 설명회 및 교육자료 배포</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-mon">6월 1일 ~ 6월 20일</div>
+      <div class="tl-title">1차 자료 제출</div>
+      <div class="tl-desc"><strong>의약품:</strong> 도매상, 판촉영업자(CSO)<br><strong>의료기기:</strong> 판매(임대)업자, 판촉영업자</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-mon">7월 1일 ~ 7월 20일</div>
+      <div class="tl-title">2차 자료 제출</div>
+      <div class="tl-desc"><strong>의약품:</strong> 품목허가·수입자, 판촉영업자<br><strong>의료기기:</strong> 제조업자, 수입업자, 판촉영업자</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-mon">7월 21일 ~ 31일</div>
+      <div class="tl-title">수정 및 보완 기간</div>
+      <div class="tl-desc">제출된 자료의 오류 수정이 가능한 기간</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-mon">8월 ~ 11월</div>
+      <div class="tl-title">자료 분석</div>
+      <div class="tl-desc">건강보험심사평가원에서 제출 자료 분석</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-mon">12월</div>
+      <div class="tl-title">실태조사 결과 공표</div>
+      <div class="tl-desc">보건복지부 홈페이지 공표 (일정 변경 가능)</div>
+    </div>
+  </div>
+  <div class="alert a-teal" style="margin-top:16px;">
+    <div class="alert-ico">🌐</div>
+    <div>
+      <strong>제출 경로</strong>
+      <p>KOPS(www.hira.or.kr/kops) 접속 또는 HIRA 홈페이지 → 주요연계업무 → 6. 지출보고서 관리시스템 클릭</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ 제출 대상 ══ -->
+<section class="sec wrap" id="subjects">
+  <div class="sec-lbl">👥 제출 대상</div>
+  <h2 class="sec-title">누가 제출해야 하나요?</h2>
+  <p class="sec-sub">의약품·의료기기 공급자등 및 판촉영업자(CSO) 모두 해당</p>
+  <div class="subj-g">
+    <div class="subj-card">
+      <div class="subj-head sh-blue">💊 의약품 제출 대상</div>
+      <div class="subj-body"><ul>
+        <li>의약품 품목허가를 받은 자</li>
+        <li>수입자</li>
+        <li>의약품 도매상</li>
+        <li>판촉영업자(CSO) — 의약품 공급자로부터 판매촉진 업무를 위탁받은 자</li>
+      </ul></div>
+    </div>
+    <div class="subj-card">
+      <div class="subj-head sh-teal">🔬 의료기기 제출 대상</div>
+      <div class="subj-body"><ul>
+        <li>의료기기 제조업자</li>
+        <li>수입업자</li>
+        <li>판매(임대)업자</li>
+        <li>판촉영업자 — 제조·수입·판매업자로부터 판매 또는 임대촉진 업무를 위탁받은 자</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="alert a-blue" style="margin-top:14px;">
+    <div class="alert-ico">📝</div>
+    <div>
+      <strong>작성 대상(의료인 등)</strong>
+      <p>약사, 한약사, 의료인, 의료기관 개설자 또는 의료기관 종사자에게 제공한 경제적 이익등이 대상입니다.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ 허용 이익 유형 ══ -->
+<section class="sec wrap" id="types">
+  <div class="sec-lbl">💊 허용 경제적 이익 유형</div>
+  <h2 class="sec-title">6가지 허용 행위 유형</h2>
+  <p class="sec-sub">이 6가지 유형만 허용되며, 그 외 경제적 이익 제공은 불법입니다.</p>
+  <p class="sec-preview">① 견본품 제공 &nbsp;② 학술대회 지원 &nbsp;③ 임상시험 지원 &nbsp;④ 제품설명회 &nbsp;⑤ 시판 후 조사 &nbsp;⑥ 대금결제 조건 할인</p>
+  <button class="show-btn" onclick="openModal('tpl-types')">💊 허용 유형 전체 보기 →</button>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ 공동인증서 발급 ══ -->
+<section class="sec wrap" id="cert">
+  <div class="sec-lbl">🔐 공동인증서 발급</div>
+  <h2 class="sec-title">공동인증서 발급 가이드</h2>
+  <p class="sec-sub">지출보고서 제출 전 반드시 완료해야 합니다 — signgate.com 한국정보인증(KICA)</p>
+
+  <div class="alert a-blue" style="margin-bottom:12px;">
+    <div class="alert-ico">💡</div>
+    <div>
+      <strong>선택할 인증서: 보건복지전용 (국민건강보험공단) — 무료</strong>
+      <p>페이지 하단까지 스크롤하여 찾기. 법인 / 개인 사업자 모두 사용 가능. 국민건강보험공단 관련 업무 전용.</p>
+    </div>
+  </div>
+
+  <div class="alert a-teal" style="margin-bottom:20px;">
+    <div class="alert-ico">✅</div>
+    <div>
+      <strong>개인사업자는 방문 없이 비대면 신청 가능 (심평원 확인)</strong>
+      <p>공식 매뉴얼에는 <strong>국민건강보험공단·국민연금공단 방문</strong>만 안내되어 있으나, 심평원 확인 결과 <strong>개인사업자는 한국정보인증에서 비대면으로 신청</strong>이 가능합니다.<br>
+      <a href="https://nhis.signra.com:4433/web-signra/main.sg" target="_blank" rel="noopener" style="color:var(--teal);font-weight:700;text-decoration:underline;">→ 비대면 신청 바로가기 (nhis.signra.com)</a></p>
+    </div>
+  </div>
+
+  <div class="cert-flow">
+    <div class="cf-item">
+      <div class="cf-num">01</div>
+      <div class="cf-label">한국정보인증 접속</div>
+      <div class="cf-sub">signgate.com</div>
+    </div>
+    <div class="cf-arr">→</div>
+    <div class="cf-item">
+      <div class="cf-num">02</div>
+      <div class="cf-label">신청 경로 선택</div>
+      <div class="cf-sub">대면 / 비대면</div>
+    </div>
+    <div class="cf-arr">→</div>
+    <div class="cf-item">
+      <div class="cf-num">03</div>
+      <div class="cf-label">인증서 선택</div>
+      <div class="cf-sub">보건복지전용(무료)</div>
+    </div>
+    <div class="cf-arr">→</div>
+    <div class="cf-item">
+      <div class="cf-num">04</div>
+      <div class="cf-label">약관 동의</div>
+      <div class="cf-sub">필수 약관 동의</div>
+    </div>
+    <div class="cf-arr">→</div>
+    <div class="cf-item">
+      <div class="cf-num">05</div>
+      <div class="cf-label">신청정보 입력</div>
+      <div class="cf-sub">사업자 정보</div>
+    </div>
+    <div class="cf-arr">→</div>
+    <div class="cf-item">
+      <div class="cf-num">06</div>
+      <div class="cf-label">서류 제출</div>
+      <div class="cf-sub">건강보험공단 방문</div>
+    </div>
+    <div class="cf-arr">→</div>
+    <div class="cf-item active">
+      <div class="cf-num">07</div>
+      <div class="cf-label">발급 완료</div>
+      <div class="cf-sub">인증서 저장</div>
+    </div>
+  </div>
+
+  <div class="step-note" style="margin-bottom:20px;">
+    📎 <strong>서류 제출 시 필요 서류:</strong> 공동인증서비스 신청서(출력), 사업자등록증(사본), 신분증(대표자 또는 위임장 시 담당자)<br>
+    → 국민건강보험공단·국민연금공단 방문 및 제출 → 공동인증서 발급 신청 접수증 수취 → 이후 온라인에서 발급 진행
+  </div>
+
+  <div class="cmp-g">
+    <div class="cmp-card">
+      <div class="cmp-head blue">✨ 신규 발급</div>
+      <div class="cmp-body"><ul>
+        <li>signgate.com 접속</li>
+        <li>대면신청 선택 (무료)</li>
+        <li>신청정보 입력</li>
+        <li>서류 지참 공단 방문 (필수)</li>
+        <li>등록번호로 온라인 발급</li>
+      </ul></div>
+    </div>
+    <div class="cmp-card">
+      <div class="cmp-head dark">🔄 갱신 (기존 진행자)</div>
+      <div class="cmp-body"><ul>
+        <li class="dark">signgate.com 접속</li>
+        <li class="dark">My인증서 → 인증서 갱신</li>
+        <li class="dark">기존 인증서로 본인 확인</li>
+        <li class="dark">방문 없이 온라인 갱신 가능</li>
+        <li class="dark">저장 매체 선택 후 완료</li>
+      </ul></div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--muted);margin-top:10px;text-align:center;">※ 갱신은 유효기간 만료 전 진행 권장. 만료 후에는 신규 발급 절차를 다시 밟아야 합니다.</p>
+
+  <div class="step-note" style="margin-top:16px;">
+    🖥️ <strong>발급 완료 단계:</strong> 등록번호 입력 → 매체 선택(하드디스크 PC저장 권장) → 발급 진행(1~5분) → 완료 화면 유효기간 확인. 브라우저 닫지 말 것.
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ 작성 방법 ══ -->
+<section class="sec wrap" id="howto">
+  <div class="sec-lbl">📝 작성 방법</div>
+  <h2 class="sec-title">지출보고서 작성 단계별 가이드</h2>
+  <p class="sec-sub">공동인증서 발급 완료 후 진행하세요 (7단계)</p>
+
+  <div class="proc-flow">
+    <div class="proc-item"><div class="proc-n">1</div><div><div class="proc-t">심평원 접속</div><div class="proc-s">hira.or.kr</div></div></div>
+    <div class="proc-arr">→</div>
+    <div class="proc-item"><div class="proc-n">2</div><div><div class="proc-t">KOPS 진입</div><div class="proc-s">하단 메뉴 6번</div></div></div>
+    <div class="proc-arr">→</div>
+    <div class="proc-item"><div class="proc-n">3</div><div><div class="proc-t">회원가입</div><div class="proc-s">사업자번호 있는 CSO</div></div></div>
+    <div class="proc-arr">→</div>
+    <div class="proc-item"><div class="proc-n">4</div><div><div class="proc-t">인증서 등록</div><div class="proc-s">인증센터에서</div></div></div>
+    <div class="proc-arr">→</div>
+    <div class="proc-item"><div class="proc-n">5</div><div><div class="proc-t">공동인증서 로그인</div><div class="proc-s">로그아웃 후 재로그인</div></div></div>
+    <div class="proc-arr">→</div>
+    <div class="proc-item"><div class="proc-n">6</div><div><div class="proc-t">지출보고서 작성</div><div class="proc-s">업체정보 입력</div></div></div>
+    <div class="proc-arr">→</div>
+    <div class="proc-item"><div class="proc-n">7</div><div><div class="proc-t">제출 완료</div><div class="proc-s">경제적이익 분기 처리</div></div></div>
+  </div>
+
+  <div class="step-box" style="margin-top:20px;">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div>
+        <div class="step-title">심평원 접속 → KOPS 진입</div>
+        <div class="step-desc">심평원(hira.or.kr) 접속 → 메인 하단으로 스크롤 → 주요연계업무 <strong>[6. 지출보고서 관리시스템]</strong> 클릭 → KOPS 진입 확인</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div>
+        <div class="step-title">회원가입</div>
+        <div class="step-desc">우측 상단 [회원가입] → <strong>"사업자등록번호 있는 판촉영업자(CSO)"</strong> 선택 → 기입하기 클릭 → 기본정보 입력 → 가입 완료 후 로그인</div>
+        <div class="step-note">📌 1유형만 가입해도 모든 유형 서비스 이용 가능</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div>
+        <div class="step-title">인증서 등록 → 공동인증서 로그인</div>
+        <div class="step-desc">
+          <strong>등록:</strong> 상단 [인증센터] → [국민, 기업/기관 → 인증서 등록] → 공동인증서(KICA 발급본) 등록 → 등록 완료 후 로그아웃<br>
+          <strong>로그인:</strong> 로그아웃 상태에서 [로그인] → [공동인증서 로그인] 선택 → 등록된 인증서로 로그인
+        </div>
+        <div class="step-note">⚠️ 인증서 등록 전엔 공동인증서 로그인 불가</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div>
+        <div class="step-title">업체정보 작성 (Step 1)</div>
+        <div class="step-desc">지출보고서 작성·정정 → 지출보고서 실태조사 → 업체기본정보 작성</div>
+        <div class="step-note">
+          📋 <strong>필수 입력 항목:</strong> 제출연도(2026년/회계연도 2025년) · 경제적이익 제공여부(있음/없음) · 영업구분/영업형태(판촉영업자) · 업체명·사업자등록번호 · 대표자명·생년월일 · 업허가·신고번호·일자 · 담당자정보(이름·연락처·이메일) · 첨부파일(허가·신고증 jpg/png/pdf 업로드)<br>
+          모든 항목 입력 후 [저장 후 다음으로 이동] 클릭
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div>
+        <div class="step-title">경제적 이익 제공 여부에 따른 처리</div>
+        <div class="step-desc" style="margin-bottom:12px;">경제적 이익 제공 여부 선택에 따라 다음 절차가 달라집니다.</div>
+        <div class="cmp-g" style="margin-top:0;">
+          <div class="cmp-card">
+            <div class="cmp-head blue">❌ 경제적 이익 제공 없음</div>
+            <div class="cmp-body"><ul>
+              <li>경제적이익 제공여부 → [없음] 선택</li>
+              <li>첨부파일 섹션에서 판촉영업 신고증 업로드 (.jpg/.png/.pdf)</li>
+              <li>동시 운영 → [동시운영하지 않음] 선택</li>
+              <li>저장 및 제출</li>
+            </ul></div>
+          </div>
+          <div class="cmp-card">
+            <div class="cmp-head dark">✅ 경제적 이익 제공 있음</div>
+            <div class="cmp-body"><ul>
+              <li class="dark">경제적이익 제공여부 → [있음] 선택</li>
+              <li class="dark">첨부파일·판촉영업 신고증 업로드</li>
+              <li class="dark">동시 운영 → [동시운영함] 선택 후 영업구분·사업자번호 입력</li>
+              <li class="dark">유형별 지출보고서 작성 진행</li>
+            </ul></div>
+          </div>
+        </div>
+        <div class="step-note" style="margin-top:10px;">⚠️ 동시운영 기재 시 타 영업형태(의료기기 등)도 함께 입력 필수. 누락 시 제출 오류 발생.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div>
+        <div class="step-title">유형별 지출보고서 작성 (이익 있는 경우)</div>
+        <div class="step-desc">지출보고서 작성 현황에서 유형 선택 → 해당 유형 작성</div>
+        <div class="step-note">
+          📌 <strong>제품설명회:</strong> 복수요양기관 / 개별요양기관 두 가지 유형, 드롭다운에서 선택 후 [작성하기] 클릭<br>
+          입력 순서: 드롭다운 선택 → [작성하기] → 건별등록 팝업 → 의약품·요양기관 정보 입력(돋보기 검색) → 보건의료인 정보 → 지원금액 → 장소·일시 → [저장] → 목록에서 확인<br><br>
+          📊 <strong>엑셀 일괄등록:</strong> [엑셀다운로드] → 양식 저장 → 번호·제품명(표준코드)·요양기관기호·성명·식음료비·장소·일시 입력 → [일괄등록] 클릭 → 작성한 엑셀 파일 업로드<br><br>
+          🔍 <strong>의약품 조회:</strong> 제품명 검색창 옆 돋보기 클릭 → 검색 결과 좌측 목록에서 제품 선택 → 선택 시 우측으로 이동 확인 → [선택] 버튼 클릭하여 적용<br>
+          🏥 <strong>요양기관 조회:</strong> 기관명 옆 돋보기 클릭 → 지역·종별·기관명으로 검색 → 목록에서 해당 기관 클릭하여 선택 → 요양기관기호 자동 입력 확인
+        </div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div>
+        <div class="step-title">최종확정 및 제출 완료</div>
+        <div class="step-desc">작성 완료 후 [최종확정] 클릭 → 비식별 처리 확인 → 확인함 체크 → [동의 및 최종확정] 클릭</div>
+        <div class="step-note">
+          ✅ <strong>제출 완료 후 확인 사항:</strong><br>
+          · 진행상태: 공개(최종제출) 확인 → 정상 제출 완료<br>
+          · 경제적이익 제공여부: 있음/없음 선택값 확인<br>
+          · 작성일 / 수정일: 제출 날짜 확인<br>
+          · 업체정보 작성내역 / 지출보고서 작성내역: 클릭하여 입력 내용 재확인 가능<br><br>
+          📱 지출보고서 처리 완료 시 <strong>카카오톡 또는 SMS</strong>로 안내 발송 (담당자 정보 현행화 및 착오기재 주의)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ 벌칙 ══ -->
+<section class="sec wrap" id="penalty">
+  <div class="sec-lbl">⚖️ 벌칙 규정</div>
+  <h2 class="sec-title">미이행 시 제재</h2>
+  <p class="sec-sub">약사법 제95조 및 의료기기법 제53조의2</p>
+  <p class="sec-preview">미작성·미공개·허위 작성 시 <strong>1년 이하 징역 또는 1천만원 이하 벌금</strong></p>
+  <button class="show-btn" onclick="openModal('tpl-penalty')" style="background:var(--red);--blue-d:#7a1e1e;">⚖️ 벌칙 규정 전체 보기 →</button>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ FAQ ══ -->
+<section class="sec wrap" id="faq">
+  <div class="sec-lbl">❓ FAQ</div>
+  <h2 class="sec-title">자주 묻는 질문</h2>
+  <p class="sec-sub">자주 문의되는 사항을 모았습니다</p>
+
+  <details class="faq"><summary class="faq">경제적 이익을 제공하지 않았는데도 제출해야 하나요?<span class="faq-arr">▼</span></summary><div class="faq-ans">네, 반드시 <strong>무실적 제출</strong>을 하셔야 합니다. [경제적이익 제공여부 → 없음 선택] 후 판촉영업 신고증을 업로드하고 제출하시면 됩니다.</div></details>
+
+  <details class="faq"><summary class="faq">공동인증서는 어디서 발급받나요?<span class="faq-arr">▼</span></summary><div class="faq-ans">한국정보인증(KICA) <strong>signgate.com</strong>에서 발급합니다. 보건복지전용(국민건강보험공단) 인증서를 선택하면 무료로 발급 가능합니다. 신규 발급은 서류를 지참하여 국민건강보험공단·국민연금공단을 방문해야 하며, 기존 진행자는 온라인 갱신이 가능합니다.</div></details>
+
+  <details class="faq"><summary class="faq">은행용 공동인증서(개인·범용)도 사용할 수 있나요?<span class="faq-arr">▼</span></summary><div class="faq-ans">사용 불가합니다. <strong>건강보험공단에서 발급받은 인증서 및 전자세금계산서용 인증서</strong>만 인증됩니다. 일반 은행용 금융 인증서는 로그인이 되지 않습니다.</div></details>
+
+  <details class="faq"><summary class="faq">제품설명회 복수기관과 개별방문의 차이는 무엇인가요?<span class="faq-arr">▼</span></summary><div class="faq-ans"><strong>복수 기관 제품설명회:</strong> 국내 여러 요양기관 대상 개최. 교통비·기념품 5만원 이하·숙박·식음료 10만원 이하 지원 가능.<br><br><strong>개별 방문 제품설명회:</strong> 개별 요양기관 방문 개최. 식음료 10만원 이하(1일), 판촉물 1만원 이하만 허용 (월 4회 이내).</div></details>
+
+  <details class="faq"><summary class="faq">엑셀로 일괄 등록도 가능한가요?<span class="faq-arr">▼</span></summary><div class="faq-ans">가능합니다. KOPS에서 [엑셀다운로드] 클릭 → 양식 저장 → 번호·제품명(표준코드)·요양기관기호·성명·지원금액·장소·일시 입력 → 저장 → [일괄등록] 클릭 → 파일 업로드 순으로 진행하시면 됩니다.</div></details>
+
+  <details class="faq"><summary class="faq">학술대회 지원금 지급 시점이 개최 시점과 다르면 어떻게 작성하나요?<span class="faq-arr">▼</span></summary><div class="faq-ans">원칙적으로 <strong>실제 지원금이 지급된 시점</strong>을 기준으로 작성합니다. 예시: '24.12.1. 개최 → '25.1.7. 지급 → 26년 지출보고서(2025 회계연도) 내역에 작성.</div></details>
+
+  <details class="faq"><summary class="faq">폐업 예정인 경우 지출보고서를 제출해야 하나요?<span class="faq-arr">▼</span></summary><div class="faq-ans">수정보완 기간(21~31일) 이전까지 폐업이 완료되면 지출보고서 공개 의무가 소멸됩니다. 단, 휴업 업체는 폐업이 아니므로 제출 의무가 있습니다.</div></details>
+
+  <details class="faq"><summary class="faq">제출 완료 확인은 어떻게 하나요?<span class="faq-arr">▼</span></summary><div class="faq-ans">지출보고서 작성 목록에서 <strong>진행상태가 "공개(최종제출)"</strong>로 표시되면 정상 접수 완료입니다. 제출 완료 시 담당자에게 카카오톡 또는 SMS로 안내가 발송됩니다.</div></details>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ 심평원 고객센터 ══ -->
+<section class="sec wrap">
+  <div class="cc-box">
+    <div style="font-size:20px;margin-bottom:14px;">📞</div>
+    <h3>심평원 고객센터</h3>
+    <p>지출보고서 작성 중 궁금한 사항은 아래로 문의하세요<br>담당자가 친절하게 안내해 드립니다</p>
+    <div class="cc-phones">
+      <div class="cc-phone">☎ 033-739-2840</div>
+      <div class="cc-phone">☎ 033-739-2841</div>
+    </div>
+    <div class="cc-hours">운영시간 09:00~18:00 · 점심시간 12:00~13:00</div>
+  </div>
+</section>
+
+<footer>
+  <p style="font-weight:700;margin-bottom:4px;">의약품·의료기기 지출보고서 안내 2026</p>
+  <p>본 자료는 보건복지부·건강보험심사평가원 공식 자료 및 이음 메디컬 세일즈 플랫폼 작성 매뉴얼을 바탕으로 작성되었습니다.</p>
+  <p style="margin-top:4px;">심평원 고객센터 ☎ 033-739-2840 / 2841</p>
+</footer>
+
+<!-- ══ 숨겨진 모달 콘텐츠 ══ -->
+<div id="tpl-overview" data-title="지출보고서 제도란?" style="display:none">
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">2018년 도입된 의약품·의료기기 거래 투명성 강화 제도</p>
+  <div class="card-g2">
+    <div class="card">
+      <div class="card-ico" style="background:var(--blue-l);">💡</div>
+      <div class="card-title">목적</div>
+      <div class="card-desc">의약품·의료기기 공급자가 의료인 등에게 제공한 허용된 경제적 이익 내역을 작성·공개하여 거래 투명성을 높이는 제도</div>
+    </div>
+    <div class="card">
+      <div class="card-ico" style="background:var(--teal-l);">📌</div>
+      <div class="card-title">근거 법령</div>
+      <div class="card-desc">약사법 제47조의2 / 의료기기법 제13조의2<br>약사법 시행규칙 제44조의2~4</div>
+    </div>
+    <div class="card">
+      <div class="card-ico" style="background:var(--amber-l);">📆</div>
+      <div class="card-title">작성 시기</div>
+      <div class="card-desc">개별 업체 <strong>회계연도 종료 후 3개월 이내</strong> 작성 완료 및 5년간 보관·공개</div>
+    </div>
+    <div class="card">
+      <div class="card-ico" style="background:var(--purple-l);">⚖️</div>
+      <div class="card-title">벌칙</div>
+      <div class="card-desc">미작성·미공개·허위 작성 시 <strong>1년 이하 징역 또는 1천만원 이하 벌금</strong>(약사법 제95조)</div>
+    </div>
+  </div>
+</div>
+<div id="tpl-subjects" data-title="누가 제출해야 하나요?" style="display:none">
+  <div class="subj-g">
+    <div class="subj-card">
+      <div class="subj-head sh-blue">💊 의약품 제출 대상</div>
+      <div class="subj-body"><ul>
+        <li>의약품 품목허가를 받은 자</li>
+        <li>수입자</li>
+        <li>의약품 도매상</li>
+        <li>판촉영업자(CSO) — 의약품 공급자로부터 판매촉진 업무를 위탁받은 자</li>
+      </ul></div>
+    </div>
+    <div class="subj-card">
+      <div class="subj-head sh-teal">🔬 의료기기 제출 대상</div>
+      <div class="subj-body"><ul>
+        <li>의료기기 제조업자</li>
+        <li>수입업자</li>
+        <li>판매(임대)업자</li>
+        <li>판촉영업자 — 제조·수입·판매업자로부터 판매 또는 임대촉진 업무를 위탁받은 자</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="alert a-blue" style="margin-top:14px;">
+    <div class="alert-ico">📝</div>
+    <div>
+      <strong>작성 대상(의료인 등)</strong>
+      <p>약사, 한약사, 의료인, 의료기관 개설자 또는 의료기관 종사자에게 제공한 경제적 이익등이 대상입니다.</p>
+    </div>
+  </div>
+</div>
+
+<div id="tpl-types" data-title="6가지 허용 행위 유형" style="display:none">
+  <div class="ben-g">
+    <div class="ben b1">
+      <div class="ben-num">①</div>
+      <div class="ben-title">견본품 제공</div>
+      <p class="ben-desc">최소 포장단위에 "견본품"/"sample" 표기 후 요양기관에 제형 확인에 필요한 최소 수량 제공</p>
+      <span class="ben-lim">환자 판매·소분 불가</span>
+    </div>
+    <div class="ben b2">
+      <div class="ben-num">②</div>
+      <div class="ben-title">학술대회 지원</div>
+      <p class="ben-desc">발표자·좌장·토론자에게 교통비·식비·숙박비·등록비 용도의 실제비용 지원</p>
+      <span class="ben-lim">주최자 통한 실비만 허용</span>
+    </div>
+    <div class="ben b3">
+      <div class="ben-num">③</div>
+      <div class="ben-title">임상시험 등의 지원</div>
+      <p class="ben-desc">식약처 승인 임상시험에 필요한 의약품과 적절한 연구비 제공 (위원회 사전 승인 필요)</p>
+      <span class="ben-lim">해당 위원회 사전 승인</span>
+    </div>
+    <div class="ben b4">
+      <div class="ben-num">④</div>
+      <div class="ben-title">제품설명회</div>
+      <p class="ben-desc"><strong>복수기관:</strong> 교통비+기념품 5만↓+숙박+식음료 10만↓<br><strong>개별방문:</strong> 식음료 10만↓+판촉물 1만↓ (월 4회 이내)</p>
+      <span class="ben-lim">의약품 정보 제공 목적만</span>
+    </div>
+    <div class="ben b5">
+      <div class="ben-num">⑤</div>
+      <div class="ben-title">시판 후 조사</div>
+      <p class="ben-desc">사례보고서 1건당 사례비 지급 (2026년: 구분 항목 신규 기재 필수)</p>
+      <span class="ben-lim">일반 5만↓ / 희귀·장기 30만↓</span>
+    </div>
+    <div class="ben b6">
+      <div class="ben-num">⑥</div>
+      <div class="ben-title">대금결제 조건 할인</div>
+      <p class="ben-desc">3개월 내 0.6% / 2개월 내 1.2% / 1개월 내 1.8% 이하 비용할인</p>
+      <span class="ben-lim">2026년: 계속적 거래 Y/N 기재</span>
+    </div>
+  </div>
+  <div class="alert a-amber" style="margin-top:16px;">
+    <div class="alert-ico">⚠️</div>
+    <div>
+      <strong>의료기기 추가 항목</strong>
+      <p>의료기기는 ⑦ <strong>구매 전 의료기기 성능 확인을 위한 사용</strong>(최소기한 1개월 이하)이 추가로 허용됩니다.</p>
+    </div>
+  </div>
+</div>
+
+<div id="tpl-penalty" data-title="미이행 시 제재" style="display:none">
+  <p style="font-size:12.5px;color:var(--muted);margin-bottom:18px;">약사법 제95조 및 의료기기법 제53조의2</p>
+  <div class="pen-g">
+    <div class="pen">
+      <h3>미작성·미공개·미보관</h3>
+      <p>지출보고서 미작성 또는 미공개 시</p>
+      <div class="pen-num">1년 이하 징역</div>
+      <div class="pen-unit">또는</div>
+      <div class="pen-num">1천만원 이하</div>
+      <div class="pen-unit">벌금</div>
+    </div>
+    <div class="pen">
+      <h3>허위 작성·공개</h3>
+      <p>지출보고서 거짓 작성 또는 공개 시</p>
+      <div class="pen-num">1년 이하 징역</div>
+      <div class="pen-unit">또는</div>
+      <div class="pen-num">1천만원 이하</div>
+      <div class="pen-unit">벌금</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 모달 ══ -->
+<div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
+<div id="modal-box" class="modal-box">
+  <div class="modal-hd">
+    <h3 id="modal-lbl"></h3>
+    <button class="modal-close" onclick="closeModal()">✕</button>
+  </div>
+  <div id="modal-bd" class="modal-bd"></div>
+</div>
+
+<script>
+function openModal(id){
+  var tpl=document.getElementById(id);
+  document.getElementById('modal-lbl').textContent=tpl.dataset.title||'';
+  document.getElementById('modal-bd').innerHTML=tpl.innerHTML;
+  document.getElementById('modal-overlay').style.display='block';
+  var box=document.getElementById('modal-box');
+  box.style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeModal(){
+  document.getElementById('modal-overlay').style.display='none';
+  document.getElementById('modal-box').style.display='none';
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeModal();});
+</script>
+
+</body>
+</html>
